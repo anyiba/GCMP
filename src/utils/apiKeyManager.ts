@@ -170,7 +170,7 @@ export class ApiKeyManager {
             Logger.debug(`API密钥已更新: ${vendor}`);
 
             // API密钥 设置后，更新状态栏
-            if (vendor === 'deepseek' || vendor === 'moonshot') {
+            if (vendor === 'moonshot') {
                 try {
                     StatusBarManager.checkAndShowStatus(vendor);
                 } catch (error) {

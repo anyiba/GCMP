@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { GenericModelProvider } from './providers/genericModelProvider';
 import { ZhipuProvider } from './providers/zhipuProvider';
 import { KimiProvider } from './providers/kimiProvider';
+import { DeepSeekProvider } from './providers/deepseekProvider';
 import { IFlowProvider } from './providers/iflowProvider';
 import { StreamLakeProvider } from './providers/streamlakeProvider';
 import { MiniMaxProvider } from './providers/minimaxProvider';
@@ -21,6 +22,7 @@ const registeredProviders: Record<
     | GenericModelProvider
     | ZhipuProvider
     | KimiProvider
+    | DeepSeekProvider
     | IFlowProvider
     | StreamLakeProvider
     | MiniMaxProvider
@@ -55,6 +57,7 @@ async function activateProviders(context: vscode.ExtensionContext): Promise<void
                 | GenericModelProvider
                 | ZhipuProvider
                 | KimiProvider
+                | DeepSeekProvider
                 | IFlowProvider
                 | StreamLakeProvider
                 | MiniMaxProvider;
@@ -68,6 +71,11 @@ async function activateProviders(context: vscode.ExtensionContext): Promise<void
             } else if (providerKey === 'kimi') {
                 // 对 kimi 使用专门的 provider（使用量统计和状态栏管理）
                 const result = KimiProvider.createAndActivate(context, providerKey, providerConfig);
+                provider = result.provider;
+                disposables = result.disposables;
+            } else if (providerKey === 'deepseek') {
+                // 对 deepseek 使用专门的 provider（使用量统计和状态栏管理）
+                const result = DeepSeekProvider.createAndActivate(context, providerKey, providerConfig);
                 provider = result.provider;
                 disposables = result.disposables;
             } else if (providerKey === 'iflow') {

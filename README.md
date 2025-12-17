@@ -6,7 +6,7 @@
 [![Downloads](https://img.shields.io/visual-studio-marketplace/d/vicanent.gcmp?color=green&label=Downloads)](https://marketplace.visualstudio.com/items?itemName=vicanent.gcmp)
 [![License](https://img.shields.io/github/license/VicBilibily/GCMP?color=orange&label=License)](https://github.com/VicBilibily/GCMP/blob/main/LICENSE)
 
-通过集成国内主流原生大模型提供商，为开发者提供更加丰富、更适合本土需求的 AI 编程助手选择。目前已内置支持 智谱AI、Kimi、火山方舟、MiniMax、Moonshot AI、DeepSeek、快手万擎、阿里云百炼 等**原生大模型**提供商。此外，扩展插件已适配支持 OpenAI 与 Anthropic 的 API 接口兼容模型，支持自定义接入任何提供兼容接口的第三方**云服务模型**。
+通过集成国内主流原生大模型提供商，为开发者提供更加丰富、更适合本土需求的 AI 编程助手选择。目前已内置支持 智谱AI、Kimi、火山方舟、MiniMax、Moonshot AI、快手万擎、阿里云百炼 等**原生大模型**提供商。此外，扩展插件已适配支持 OpenAI 与 Anthropic 的 API 接口兼容模型，支持自定义接入任何提供兼容接口的第三方**云服务模型**。
 
 #### EOL 内置提供商结束支持计划
 
@@ -65,15 +65,6 @@
 - 预置模型：**Kimi-K2-0905-Preview**、**Kimi-K2-Turbo-Preview**、**Kimi-K2-0711-Preview**、**Kimi-Latest**
     - **余额查询**：已支持状态栏显示当前账户额度，可查看账户余额状况。
 - 思考模型：**Kimi-K2-Thinking**、**Kimi-K2-Thinking-Turbo**
-
-### [**DeepSeek**](https://platform.deepseek.com/) - 深度求索
-
-- 预置模型：**DeepSeek-V3.2**(Reasoner)
-    - **余额查询**：已支持状态栏显示当前账户额度，可查看账户余额详情。
-
-```json
-  "chat.agent.thinkingStyle": "expanded", // 使用 DeepSeek-V3.2 (Reasoner) 时建议展开思考内容
-```
 
 ### [**快手万擎**](https://streamlake.com/product/kat-coder) - StreamLake
 
@@ -251,9 +242,9 @@ FIM 和 NES 补全都使用单独的模型配置，可以分别通过 `gcmp.fimC
     "gcmp.fimCompletion.debounceMs": 500, // 自动触发补全的防抖延迟
     "gcmp.fimCompletion.timeoutMs": 5000, // FIM 补全的请求超时时间
     "gcmp.fimCompletion.modelConfig": {
-        "provider": "deepseek", // 提供商ID，其他请先添加 OpenAI Compatible 自定义模型 provider 并设置 ApiKey
-        "baseUrl": "https://api.deepseek.com/beta", // 指定 FIM Completion Endpoint 的 BaseUrl
-        "model": "deepseek-chat",
+        "provider": "moonshot", // 提供商ID，其他请先添加 OpenAI Compatible 自定义模型 provider 并设置 ApiKey
+        "baseUrl": "https://api.moonshot.cn/v1", // 指定 FIM Completion Endpoint 的 BaseUrl
+        "model": "moonshot-v1-8k",
         "maxTokens": 100
         // "extraBody": { "top_p": 0.9 }
     }
@@ -297,9 +288,9 @@ FIM 和 NES 补全都使用单独的模型配置，可以分别通过 `gcmp.fimC
     "gcmp.fimCompletion.debounceMs": 500,
     "gcmp.fimCompletion.timeoutMs": 5000,
     "gcmp.fimCompletion.modelConfig": {
-        "provider": "deepseek",
-        "baseUrl": "https://api.deepseek.com/beta",
-        "model": "deepseek-chat",
+        "provider": "moonshot",
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "model": "moonshot-v1-8k",
         "maxTokens": 100
     },
     "gcmp.nesCompletion.enabled": true,
@@ -307,9 +298,9 @@ FIM 和 NES 补全都使用单独的模型配置，可以分别通过 `gcmp.fimC
     "gcmp.nesCompletion.timeoutMs": 10000,
     "gcmp.nesCompletion.manualOnly": true, // 启用FIM自动触发，但手动触发NES
     "gcmp.nesCompletion.modelConfig": {
-        "provider": "deepseek",
-        "baseUrl": "https://api.deepseek.com/v1",
-        "model": "deepseek-chat",
+        "provider": "moonshot",
+        "baseUrl": "https://api.moonshot.cn/v1",
+        "model": "moonshot-v1-8k",
         "maxTokens": 200
     }
 }

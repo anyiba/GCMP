@@ -44,7 +44,7 @@ export interface BaseStatusBarItemConfig {
 
 /**
  * 扩展的状态栏项配置（包含 API Key 提供商）
- * 适用于单提供商状态栏（如 MiniMaxStatusBar、DeepSeekStatusBar 等）
+ * 适用于单提供商状态栏（如 MiniMaxStatusBar 等）
  */
 export interface StatusBarItemConfig extends BaseStatusBarItemConfig {
     /** API Key 提供商标识 */

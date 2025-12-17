@@ -10,6 +10,7 @@ import { AiHubMixBalanceQuery } from './providers/aihubmixBalanceQuery';
 import { AiPingBalanceQuery } from './providers/aipingBalanceQuery';
 import { SiliconflowBalanceQuery } from './providers/siliconflowBalanceQuery';
 import { OpenrouterBalanceQuery } from './providers/openrouterBalanceQuery';
+import { DeepSeekBalanceQuery } from './providers/deepseekBalanceQuery';
 
 /**
  * 余额查询管理器
@@ -42,6 +43,7 @@ export class BalanceQueryManager {
         BalanceQueryManager.registerHandler('aiping', new AiPingBalanceQuery());
         BalanceQueryManager.registerHandler('siliconflow', new SiliconflowBalanceQuery());
         BalanceQueryManager.registerHandler('openrouter', new OpenrouterBalanceQuery());
+        BalanceQueryManager.registerHandler('deepseek', new DeepSeekBalanceQuery());
     }
 
     /**

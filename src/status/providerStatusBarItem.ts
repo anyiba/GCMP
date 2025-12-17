@@ -1,7 +1,7 @@
 ﻿/*---------------------------------------------------------------------------------------------
  *  单提供商状态栏项基类
  *  继承 BaseStatusBarItem，添加 API Key 相关逻辑
- *  适用于依赖单个 API Key 的提供商状态栏（如 MiniMax、DeepSeek、Kimi、Moonshot 等）
+ *  适用于依赖单个 API Key 的提供商状态栏（如 MiniMax、Kimi、Moonshot 等）
  *--------------------------------------------------------------------------------------------*/
 
 import { BaseStatusBarItem, StatusBarItemConfig } from './baseStatusBarItem';
@@ -16,7 +16,7 @@ export { StatusBarItemConfig } from './baseStatusBarItem';
  *
  * 适用于：
  * - 依赖单个 API Key 的提供商
- * - MiniMaxStatusBar、DeepSeekStatusBar、KimiStatusBar、MoonshotStatusBar 等
+ * - MiniMaxStatusBar、KimiStatusBar、MoonshotStatusBar 等
  *
  * @template T 状态数据类型
  */

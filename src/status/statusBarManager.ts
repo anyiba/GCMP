@@ -7,7 +7,6 @@ import * as vscode from 'vscode';
 import { StatusLogger } from '../utils/statusLogger';
 import { MiniMaxStatusBar } from './minimaxStatusBar';
 import { KimiStatusBar } from './kimiStatusBar';
-import { DeepSeekStatusBar } from './deepseekStatusBar';
 import { MoonshotStatusBar } from './moonshotStatusBar';
 import { CompatibleStatusBar } from './compatibleStatusBar';
 
@@ -37,8 +36,6 @@ export class StatusBarManager {
     static minimax: IStatusBar | undefined;
     /** Kimi For Coding 状态栏 */
     static kimi: IStatusBar | undefined;
-    /** DeepSeek 余额查询状态栏 */
-    static deepseek: IStatusBar | undefined;
     /** Moonshot 余额查询状态栏 */
     static moonshot: IStatusBar | undefined;
     /** Compatible 提供商状态栏 */
@@ -60,10 +57,6 @@ export class StatusBarManager {
         // 创建并注册 Kimi 状态栏
         const kimiStatusBar = new KimiStatusBar();
         this.registerStatusBar('kimi', kimiStatusBar);
-
-        // 创建并注册 DeepSeek 状态栏
-        const deepseekStatusBar = new DeepSeekStatusBar();
-        this.registerStatusBar('deepseek', deepseekStatusBar);
 
         // 创建并注册 Moonshot 状态栏
         const moonshotStatusBar = new MoonshotStatusBar();
@@ -93,9 +86,6 @@ export class StatusBarManager {
                 break;
             case 'kimi':
                 this.kimi = statusBar;
-                break;
-            case 'deepseek':
-                this.deepseek = statusBar;
                 break;
             case 'moonshot':
                 this.moonshot = statusBar;
@@ -199,7 +189,6 @@ export class StatusBarManager {
         // 清除公共实例引用
         this.minimax = undefined;
         this.kimi = undefined;
-        this.deepseek = undefined;
         this.moonshot = undefined;
         this.compatible = undefined;
     }

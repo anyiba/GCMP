@@ -2,7 +2,7 @@
     "name": "gcmp",
     "publisher": "vicanent",
     "displayName": "AI Chat Models",
-    "description": "为 GitHub Copilot Chat 提供 智谱AI、Kimi、火山方舟、MiniMax、MoonshotAI、DeepSeek、快手万擎、阿里云百炼 模型支持的扩展，并提供 `OpenAI / Anthropic Compatible` 自定义模型支持。",
+    "description": "为 GitHub Copilot Chat 提供 智谱AI、Kimi、火山方舟、MiniMax、MoonshotAI、快手万擎、阿里云百炼 模型支持的扩展，并提供 `OpenAI / Anthropic Compatible` 自定义模型支持。",
     "version": "0.15.8",
     "license": "MIT",
     "keywords": [
@@ -16,7 +16,6 @@
         "volcengine",
         "minimax",
         "moonshot",
-        "deepseek",
         "streamlake",
         "dashscope",
         "OpenAI Compatible",
@@ -24,7 +23,6 @@
         "智谱AI",
         "火山方舟",
         "月之暗面",
-        "深度求索",
         "快手万擎",
         "阿里云百炼",
         "Coding Plan 编程套餐"
@@ -54,11 +52,11 @@
         "onStartupFinished",
         "onLanguageModelProvider:gcmp.zhipu",
         "onLanguageModelProvider:gcmp.kimi",
+        "onLanguageModelProvider:gcmp.deepseek",
         "onLanguageModelProvider:gcmp.volcengine",
         "onLanguageModelProvider:gcmp.minimax",
         "onLanguageModelProvider:gcmp.iflow",
         "onLanguageModelProvider:gcmp.moonshot",
-        "onLanguageModelProvider:gcmp.deepseek",
         "onLanguageModelProvider:gcmp.streamlake",
         "onLanguageModelProvider:gcmp.dashscope",
         "onLanguageModelProvider:gcmp.compatible",
@@ -81,6 +79,11 @@
             {
                 "command": "gcmp.kimi.setApiKey",
                 "title": "设置 Kimi API密钥",
+                "category": "GCMP"
+            },
+            {
+                "command": "gcmp.deepseek.setApiKey",
+                "title": "设置 DeepSeek API密钥",
                 "category": "GCMP"
             },
             {
@@ -116,11 +119,6 @@
             {
                 "command": "gcmp.moonshot.setApiKey",
                 "title": "设置 MoonshotAI API密钥",
-                "category": "GCMP"
-            },
-            {
-                "command": "gcmp.deepseek.setApiKey",
-                "title": "设置 DeepSeek API密钥",
                 "category": "GCMP"
             },
             {
@@ -394,6 +392,11 @@
                 "managementCommand": "gcmp.kimi.setApiKey"
             },
             {
+                "vendor": "gcmp.deepseek",
+                "displayName": "⦿ DeepSeek (R1/V3)",
+                "managementCommand": "gcmp.deepseek.setApiKey"
+            },
+            {
                 "vendor": "gcmp.volcengine",
                 "displayName": "⦿ 火山方舟 (Coding Plan)",
                 "managementCommand": "gcmp.volcengine.setApiKey"
@@ -412,11 +415,6 @@
                 "vendor": "gcmp.moonshot",
                 "displayName": "⦿ MoonshotAI",
                 "managementCommand": "gcmp.moonshot.setApiKey"
-            },
-            {
-                "vendor": "gcmp.deepseek",
-                "displayName": "⦿ DeepSeek",
-                "managementCommand": "gcmp.deepseek.setApiKey"
             },
             {
                 "vendor": "gcmp.streamlake",
@@ -533,18 +531,18 @@
                     "fontCharacter": "\\e7de"
                 }
             },
+            "gcmp-deepseek": {
+                "description": "DeepSeek",
+                "default": {
+                    "fontPath": "./fonts/compatible.ttf",
+                    "fontCharacter": "\\eac8"
+                }
+            },
             "gcmp-minimax": {
                 "description": "MiniMax",
                 "default": {
                     "fontPath": "./fonts/minimax.ttf",
                     "fontCharacter": "\\ea4b"
-                }
-            },
-            "gcmp-deepseek": {
-                "description": "DeepSeek",
-                "default": {
-                    "fontPath": "./fonts/deepseek.ttf",
-                    "fontCharacter": "\\e726"
                 }
             },
             "gcmp-moonshot": {

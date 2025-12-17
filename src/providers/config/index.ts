@@ -6,9 +6,9 @@ import volcengine from './volcengine.json';
 import minimax from './minimax.json';
 import iflow from './iflow.json';
 import moonshot from './moonshot.json';
-import deepseek from './deepseek.json';
 import streamlake from './streamlake.json';
 import dashscope from './dashscope.json';
+import deepseek from './deepseek.json';
 
 const providers = {
     zhipu,
@@ -17,9 +17,9 @@ const providers = {
     minimax,
     iflow,
     moonshot,
-    deepseek,
     streamlake,
-    dashscope
+    dashscope,
+    deepseek
 };
 
 export type ProviderName = keyof typeof providers;
